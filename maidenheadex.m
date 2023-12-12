@@ -1,4 +1,4 @@
-function [exmh]=maidenhead(lat,long)
+function [exmh]=maidenheadex(lat,long)
 % conversion long/lat en degré décimaux vers maidenhead grid
 % longitude positive vers l'est (négative vers l'ouest)
 % latitude positive vers le nord (négative vers le sud)
@@ -49,11 +49,11 @@ char5=char(digit5+64);                      %conversion en alphabétique
 digit6=floor(mod(lat_mh,1)/1*60/2.5)+1;     %6ème digit (tranche de 2.5 minutes d'arc latitude)
 char6=char(digit6+64);                      %conversion en alphabétique
 
-digit7=floor(mod(long_mh,1/12)*120)            %7ème digit (tranche de 30 seconds longitude)
-char7=num2str(digit7)                      %conversion ASCII
+digit7=floor(mod(long_mh,1/12)*120);            %7ème digit (tranche de 30 seconds longitude)
+char7=num2str(digit7);                      %conversion ASCII
 
-digit8=floor(mod(lat_mh,1/24)*240)             %8ème digit (tranche de 15 seconds latitude)
-char8=num2str(digit8)   
+digit8=floor(mod(lat_mh,1/24)*240);             %8ème digit (tranche de 15 seconds latitude)
+char8=num2str(digit8);   
 
 
-exmh=strcat(char1,char2,char3,char4,char5,char6,char7, char8) %concaténation et affichage
+exmh=strcat(char1,char2,char3,char4,char5,char6,char7, char8); %concaténation et affichage
